@@ -43,7 +43,6 @@ while len(correct_answers) < 46:
         t.penup()
         the_country = None
         if user_entry in country_names:
-            print("now here")
             the_country = countries_list[countries_list["Country"]== user_entry]
         else:
             the_country = countries_list[countries_list["Alternative name"] == user_entry]
