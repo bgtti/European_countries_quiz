@@ -8,9 +8,8 @@ turtle.setup(720, 585)
 the_map = "europe_map.gif"
 screen.addshape(the_map)
 turtle.shape(the_map)
-# comment out screen.exitonclick() when using the code to get the coordinates:
-# screen.exitonclick()
 
+# comment out screen.exitonclick() at the end when using the code to get the coordinates:
 # Getting map coordinates for eack country:
 # def get_mouse_click_coor(x, y):
 #     print(x, y)
@@ -28,23 +27,28 @@ all_names.extend(alternative_names)
 all_names = list(dict.fromkeys(all_names))
 
 
-# the popup box:
-user_entry = screen.textinput(
-    "Guess the country", "Guess another country name")
+# the popup box to get user input and save correct answers:
+
+correct_answers = []
 
 # get country names to show on map
-if user_entry in all_names:
-    t = turtle.Turtle()
-    t.hideturtle()
-    t.penup()
-    the_country = None
-    if user_entry in country_names:
-        print("now here")
-        the_country = countries_list[countries_list["Country"] == user_entry]
-    else:
-        the_country = countries_list[countries_list["Alternative name"] == user_entry]
+while len(correct_answers) < 46:
+    user_entry = screen.textinput(
+        f"{len(correct_answers)}/46 Countries Correct", "Guess another country name").title()
 
-    t.goto(int(the_country["X"]), int(the_country["Y"]))
-    t.write(the_country["Alternative name"])
+    if user_entry in all_names:
+        correct_answers.append(user_entry)
+        t = turtle.Turtle()
+        t.hideturtle()
+        t.penup()
+        the_country = None
+        if user_entry in country_names:
+            print("now here")
+            the_country = countries_list[countries_list["Country"]== user_entry]
+        else:
+            the_country = countries_list[countries_list["Alternative name"] == user_entry]
+
+        t.goto(int(the_country["X"]), int(the_country["Y"]))
+        t.write(user_entry)
 
 screen.exitonclick()
