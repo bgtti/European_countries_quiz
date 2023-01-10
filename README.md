@@ -21,7 +21,7 @@ turtle.mainloop()
 ```
 The code source is from a Stack Overflow question: https://stackoverflow.com/questions/42878641/get-mouse-click-coordinates-in-python-turtle
 The country names were based on https://www.worldometers.info/geography/how-many-countries-in-europe/#:~:text=There%20are%2044%20countries%20in,the%20United%20Nations%20official%20statistics)
-````
+
 The code can be uncommented if coordinates need to be corrected in the future.
 
 ## The map
