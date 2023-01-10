@@ -18,7 +18,9 @@ def get_mouse_click_coor(x, y):
     print(x, y)
 turtle.onscreenclick(get_mouse_click_coor)
 turtle.mainloop()
+
 ```
+
 The code source is from a Stack Overflow question: https://stackoverflow.com/questions/42878641/get-mouse-click-coordinates-in-python-turtle
 The country names were based on https://www.worldometers.info/geography/how-many-countries-in-europe/#:~:text=There%20are%2044%20countries%20in,the%20United%20Nations%20official%20statistics)
 
